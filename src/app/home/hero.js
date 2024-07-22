@@ -4,7 +4,7 @@ import { IconButton, Typography } from "@material-tailwind/react";
 
 function Hero() {
   return (
-    <div className="relative min-h-screen w-full bg-[url('/image/vftm/sary13.png')] bg-cover bg-no-repeat">
+    <div className="relative min-h-screen w-full bg-[url('./image/vftm/sary13.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full " />
       <div className="grid min-h-screen px-8">
         <div
