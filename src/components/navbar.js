@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Logo from "../../public/logos/logoVftm.png";
 import Link from "next/link";
 import {
   Navbar as MTNavbar,
@@ -75,7 +76,7 @@ export function Navbar() {
           }}
         >
           <Image
-            src="/logos/logoVftm.png"
+            src={Logo}
             alt="image"
             width={110}
             height={100}
