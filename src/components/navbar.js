@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Logo from "../../public/logos/logoVftm.png";
 import Link from "next/link";
 import Logo from "../../public/logos/logoVftm.png";
 import FaireDon from "../app/faireDon/modal";

@@ -443,8 +443,8 @@ export function Content() {
                   La fili&egrave;re mara&icirc;ch&egrave;re d&eacute;signe
                   l&apos;ensemble des activit&eacute;s &eacute;conomiques
                   li&eacute;es &agrave; la culture et &agrave; la
-                  commercialisation des l&eacute;gumes et autres cultures
-                  mara&icirc;ch&egrave;res.
+                  commercialisation des l&eacute;gumes de pommes de terre et
+                  autres cultures mara&icirc;ch&egrave;res.
                 </Typography>
                 <Button
                   color="green"
