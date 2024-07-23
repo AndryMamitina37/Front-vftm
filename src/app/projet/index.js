@@ -1,23 +1,21 @@
 "use client";
 import { Button } from "@material-tailwind/react";
 import Pagination from "./pagination";
+import ProjetImage from "./img/img16.png";
 const links = [
   { name: "Projet1", href: "#" },
   { name: "Projet2", href: "#" },
   { name: "Projet3", href: "#" },
   { name: "Projet4", href: "#" },
 ];
-const stats = [
-  { name: "Projet1", taux: "10%", budget: "2102000" },
-  { name: "Projet2", taux: "20%", budget: "2102000" },
-  { name: "Projet3", taux: "30%", budget: "2102000" },
-  { name: "Projet4", taux: "10%", budget: "2102000" },
-];
 
 export default function Projet() {
   return (
     <>
-      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 min-h-screen w-full bg-[url('/image/vftm-actu/img16.png')] bg-cover bg-no-repeat">
+      <div
+        className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 min-h-screen w-full bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url(${ProjetImage.src})` }}
+      >
         {/* <img
         alt=""
         src="/image/projet/projet.png"
@@ -84,25 +82,6 @@ export default function Projet() {
                   </a>
                 ))}
               </div>
-              <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-                {stats.map((stat) => (
-                  <div key={stat.name} className="flex flex-col-reverse">
-                    <Button color="green" variant="filled">
-                      Faire un don
-                    </Button>
-
-                    <dt className="text-base leading-7 text-black-300">
-                      Taux d&apos;argent obtenu : {stat.taux}
-                    </dt>
-                    <dt className="text-base leading-7 text-black-300">
-                      Budget : {stat.budget} Ar
-                    </dt>
-                    <dd className="text-2xl font-bold leading-9 tracking-tight text-black">
-                      {stat.name}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </div>
         </div>

@@ -28,13 +28,14 @@ footer .content .box {
   transition: all 0.4s ease;
 }
 footer .content .topic {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   color: rgb(36, 36, 36);
   margin-bottom: 16px;
 }
 footer .content p {
   text-align: justify;
+  font-size: 14px;
 }
 footer .content .lower .topic {
   margin: 24px 0 5px 0;
@@ -48,7 +49,8 @@ footer .content .middle {
 /* footer .content .middle a {
   line-height: 32px;
 } */
-footer .content .right input[type="text"] {
+footer .content .right input[type="text"],
+footer .content .right input[type="email"] {
   height: 45px;
   width: 100%;
   outline: none;

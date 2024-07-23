@@ -3,6 +3,16 @@
 import React from "react";
 import Image from "next/image";
 import Modal from "./modal/index";
+import Riz from "./img/riz-epis.jpg";
+
+import Lait from "./img/lait.jpg";
+import Apiculture from "./img/Apiculture.png";
+import Viticulture from "./img/viticulture.jpg";
+import Marraichere from "./img/maraichere.jpg";
+import Huille from "./img/huilleEssentielle.jpg";
+import Pisciculture from "./img/pisciculture.jpg";
+import Vannerie from "./img/vannerie.jpg";
+import Filiere from "./img/filiere.jpg";
 import { Button, Typography, Card, CardBody } from "@material-tailwind/react";
 
 export function Content() {
@@ -23,6 +33,7 @@ export function Content() {
     setModalImageSrc("");
     setModalTitle("");
   };
+
   return (
     <section className="w-full max-w-6xl mx-auto flex flex-col px-4 py-20">
       <Modal
@@ -41,7 +52,12 @@ export function Content() {
         Nos Fili&egrave;res
       </Typography>
 
-      <div className="relative  bg-[url('/image/filiere/filiere.jpg')] bg-cover bg-no-repeat ">
+      <div
+        className="relative   bg-cover bg-no-repeat "
+        style={{
+          backgroundImage: `url(${Filiere.src})`,
+        }}
+      >
         <div
           // className="backdrop-blur-sm bg-white/2"
           style={{ height: "100%", padding: "5px" }}
@@ -71,7 +87,7 @@ export function Content() {
                       <Image
                         width={256}
                         height={256}
-                        src="/image/filiere/riz-epis.jpg"
+                        src={Riz.src}
                         className="w-12 object-cover h-12 rounded-lg"
                         alt="photo"
                       />
@@ -81,24 +97,31 @@ export function Content() {
                         className="leading-[45px] mb-4 !text-gray-900 "
                         variant="h3"
                       >
-                        Riziculture
+                        Riz
                       </Typography>
                     </div>
                   </div>
                 </Typography>
                 <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
+                  La fili&egrave;re riz se divise en deux types principaux : le
+                  riz irrigu&eacute; et le riz pluvial.
+                  {/* qui est cultiv&eacute; dans des zones
+                  o&ugrave; l&apos;eau est apport&eacute;e de mani&egrave;re
+                  contrôl&eacute;e pour garantir des rendements
+                  &eacute;lev&eacute;s. <br /> Le riz pluvial, quant &agrave;
+                  lui, d&eacute;pend des pr&eacute;cipitations naturelles et est
+                  g&eacute;n&eacute;ralement cultiv&eacute; dans des
+                  r&eacute;gions o&ugrave; l&apos;eau de pluie est suffisante
+                  pour la croissance du riz. */}
                 </Typography>
                 <Button
                   color="green"
                   variant="outlined"
                   onClick={() =>
                     openModal(
-                      "Riziculture",
+                      "Le Fili&egrave;re Riz",
                       "Culture du riz",
-                      "/image/filiere/riz-epis.jpg"
+                      Riz.src
                     )
                   }
                 >
@@ -119,7 +142,7 @@ export function Content() {
                       <Image
                         width={256}
                         height={256}
-                        src="/image/filiere/lait.jpg"
+                        src={Lait.src}
                         className="w-12 object-cover h-12 rounded-lg"
                         alt="photo"
                       />
@@ -129,21 +152,115 @@ export function Content() {
                         className="leading-[45px] mb-4 !text-gray-900 "
                         variant="h3"
                       >
-                        Laiterie
+                        Laiti&egrave;re
                       </Typography>
                     </div>
                   </div>
                 </Typography>
                 <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
+                  La fili&egrave;re laiti&egrave;re couvre l&apos;ensemble des
+                  activit&eacute;s &eacute;conomiques li&eacute;es &agrave; la
+                  production, la transformation et la commercialisation des
+                  produits laitiers tels que le lait,le yaourt, la mozzarella et
+                  le fromage.
+                </Typography>
+                <Button
+                  color="green"
+                  variant="outlined"
+                  onClick={() => openModal("Laiterie", "le lait", Lait.src)}
+                >
+                  Voir plus...
+                </Button>
+              </CardBody>
+            </Card>
+          </div>
+        </div>
+        <div className=" md:border-r px-3 border-blue-gray-100">
+          <div className="!border-b  border-blue-gray-100 mb-5">
+            <Card shadow={false} className="p-0">
+              <CardBody className="p-0 pb-5">
+                <Typography
+                  variant="h3"
+                  className="leading-[45px] mb-4 !text-gray-900 "
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="">
+                      <Image
+                        width={256}
+                        height={256}
+                        src={Apiculture.src}
+                        className="w-12 object-cover h-12 rounded-lg"
+                        alt="photo"
+                      />
+                    </div>
+                    <div>
+                      <Typography
+                        className="leading-[45px] mb-4 !text-gray-900 "
+                        variant="h3"
+                      >
+                        Apicole
+                      </Typography>
+                    </div>
+                  </div>
+                </Typography>
+                <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
+                  La fili&egrave;re apicole englobe toutes les activit&eacute;s
+                  &eacute;conomiques li&eacute;es &agrave; l&apos;&eacute;levage
+                  des abeilles, ainsi qu&apos;&agrave; la production, la
+                  transformation et la commercialisation des produits de la
+                  ruche tel que le miel.
                 </Typography>
                 <Button
                   color="green"
                   variant="outlined"
                   onClick={() =>
-                    openModal("Laiterie", "le lait", "/image/filiere/lait.jpg")
+                    openModal("Apiculture", "Les abeilles", Apiculture.src)
+                  }
+                >
+                  Voir plus...
+                </Button>
+              </CardBody>
+            </Card>
+          </div>
+          <div className="!border-b  border-blue-gray-100 mb-5">
+            <Card shadow={false} className="p-0">
+              <CardBody className="p-0 pb-5">
+                <Typography
+                  variant="h3"
+                  className="leading-[45px] mb-4 !text-gray-900 "
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="">
+                      <Image
+                        width={256}
+                        height={256}
+                        src={Viticulture.src}
+                        className="w-12 object-cover h-12 rounded-lg"
+                        alt="photo"
+                      />
+                    </div>
+                    <div>
+                      <Typography
+                        className="leading-[45px] mb-4 !text-gray-900 "
+                        variant="h3"
+                      >
+                        Viticole
+                      </Typography>
+                    </div>
+                  </div>
+                </Typography>
+                <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
+                  La fili&egrave;re viticole couvre l&apos;ensemble des
+                  activit&eacute;s &eacute;conomiques li&eacute;es &agrave; la
+                  culture de la vigne et &agrave; la production de vin, incluant
+                  la culture, la vinification et la commercialisation des
+                  produits viticoles.
+                </Typography>
+                <Button
+                  color="green"
+                  variant="outlined"
+                  onClick={() =>
+                    openModal("Viticulture", "Culture du vin", Viticulture.src)
                   }
                 >
                   Voir plus...
@@ -165,7 +282,7 @@ export function Content() {
                       <Image
                         width={256}
                         height={256}
-                        src="/image/filiere/Apiculture.png"
+                        src={Pisciculture.src}
                         className="w-12 object-cover h-12 rounded-lg"
                         alt="photo"
                       />
@@ -175,25 +292,23 @@ export function Content() {
                         className="leading-[45px] mb-4 !text-gray-900 "
                         variant="h3"
                       >
-                        Apiculture
+                        Piscicole
                       </Typography>
                     </div>
                   </div>
                 </Typography>
                 <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
+                  La fili&egrave;re piscicole englobe toutes les
+                  activit&eacute;s &eacute;conomiques li&eacute;es &agrave;
+                  l&apos;&eacute;levage des poissons, ainsi qu&apos;&agrave; la
+                  production, la transformation et la commercialisation des
+                  produits piscicoles
                 </Typography>
                 <Button
                   color="green"
                   variant="outlined"
                   onClick={() =>
-                    openModal(
-                      "Apiculture",
-                      "Les abeilles",
-                      "/image/filiere/Apiculture.png"
-                    )
+                    openModal("Pisciculture", "Les poissons", Pisciculture.src)
                   }
                 >
                   Voir plus...
@@ -213,105 +328,7 @@ export function Content() {
                       <Image
                         width={256}
                         height={256}
-                        src="/image/filiere/viticulture.jpg"
-                        className="w-12 object-cover h-12 rounded-lg"
-                        alt="photo"
-                      />
-                    </div>
-                    <div>
-                      <Typography
-                        className="leading-[45px] mb-4 !text-gray-900 "
-                        variant="h3"
-                      >
-                        Viticulture
-                      </Typography>
-                    </div>
-                  </div>
-                </Typography>
-                <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
-                </Typography>
-                <Button
-                  color="green"
-                  variant="outlined"
-                  onClick={() =>
-                    openModal(
-                      "Viticulture",
-                      "Culture du vin",
-                      "/image/filiere/viticulture.jpg"
-                    )
-                  }
-                >
-                  Voir plus...
-                </Button>
-              </CardBody>
-            </Card>
-          </div>
-        </div>
-        <div className=" md:border-r px-3 border-blue-gray-100">
-          <div className="!border-b  border-blue-gray-100 mb-5">
-            <Card shadow={false} className="p-0">
-              <CardBody className="p-0 pb-5">
-                <Typography
-                  variant="h3"
-                  className="leading-[45px] mb-4 !text-gray-900 "
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="">
-                      <Image
-                        width={256}
-                        height={256}
-                        src="/image/filiere/pisciculture.jpg"
-                        className="w-12 object-cover h-12 rounded-lg"
-                        alt="photo"
-                      />
-                    </div>
-                    <div>
-                      <Typography
-                        className="leading-[45px] mb-4 !text-gray-900 "
-                        variant="h3"
-                      >
-                        Pisciculture
-                      </Typography>
-                    </div>
-                  </div>
-                </Typography>
-                <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
-                </Typography>
-                <Button
-                  color="green"
-                  variant="outlined"
-                  onClick={() =>
-                    openModal(
-                      "Pisciculture",
-                      "Les poissons",
-                      "/image/filiere/pisciculture.jpg"
-                    )
-                  }
-                >
-                  Voir plus...
-                </Button>
-              </CardBody>
-            </Card>
-          </div>
-          <div className="!border-b  border-blue-gray-100 mb-5">
-            <Card shadow={false} className="p-0">
-              <CardBody className="p-0 pb-5">
-                <Typography
-                  variant="h3"
-                  className="leading-[45px] mb-4 !text-gray-900 "
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="">
-                      <Image
-                        width={256}
-                        height={256}
-                        src="/image/filiere/huilleEssentielle.jpg"
+                        src={Huille.src}
                         className="w-12 object-cover h-12 rounded-lg"
                         alt="photo"
                       />
@@ -327,19 +344,18 @@ export function Content() {
                   </div>
                 </Typography>
                 <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
+                  La fili&egrave;re des huiles essentielles englobe les
+                  activit&eacute;s li&eacute;es &agrave; la production, la
+                  transformation et la commercialisation des huiles
+                  essentielles, qui sont extraites de plantes et
+                  utilis&eacute;es dans divers domaines tels que les soins
+                  personnels et l&apos;aromath&eacute;rapie.
                 </Typography>
                 <Button
                   color="green"
                   variant="outlined"
                   onClick={() =>
-                    openModal(
-                      "Huille essentielle",
-                      "",
-                      "/image/filiere/huilleEssentielle.jpg"
-                    )
+                    openModal("Huille essentielle", "", Huille.src)
                   }
                 >
                   Voir plus...
@@ -362,7 +378,7 @@ export function Content() {
                       <Image
                         width={256}
                         height={256}
-                        src="/image/filiere/vannerie.jpg"
+                        src={Vannerie.src}
                         className="w-12 object-cover h-12 rounded-lg"
                         alt="photo"
                       />
@@ -378,16 +394,16 @@ export function Content() {
                   </div>
                 </Typography>
                 <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
+                  La fili&egrave;re vannerie couvre toutes les activit&eacute;s
+                  &eacute;conomiques li&eacute;es &agrave; la fabrication
+                  d&apos;objets en osier et autres mat&eacute;riaux similaires,
+                  incluant la production et la commercialisation de produits en
+                  vannerie.
                 </Typography>
                 <Button
                   color="green"
                   variant="outlined"
-                  onClick={() =>
-                    openModal("Vannerie", "", "/image/filiere/vannerie.jpg")
-                  }
+                  onClick={() => openModal("Vannerie", "", Vannerie.src)}
                 >
                   Voir plus...
                 </Button>
@@ -408,7 +424,7 @@ export function Content() {
                       <Image
                         width={256}
                         height={256}
-                        src="/image/filiere/maraichere.jpg"
+                        src={Marraichere.src}
                         className="w-12 object-cover h-12 rounded-lg"
                         alt="photo"
                       />
@@ -418,25 +434,23 @@ export function Content() {
                         className="leading-[45px] mb-4 !text-gray-900 "
                         variant="h3"
                       >
-                        Culture marraich&egrave;re
+                        Marraich&egrave;re
                       </Typography>
                     </div>
                   </div>
                 </Typography>
                 <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
-                  Investigate the emerging field of epigenetics and its impact
-                  on understanding how environmental factors can influence gene
-                  expression and inheritance.
+                  La fili&egrave;re mara&icirc;ch&egrave;re d&eacute;signe
+                  l&apos;ensemble des activit&eacute;s &eacute;conomiques
+                  li&eacute;es &agrave; la culture et &agrave; la
+                  commercialisation des l&eacute;gumes et autres cultures
+                  mara&icirc;ch&egrave;res.
                 </Typography>
                 <Button
                   color="green"
                   variant="outlined"
                   onClick={() =>
-                    openModal(
-                      "Culture marraichère",
-                      "",
-                      "/image/filiere/maraichere.jpg"
-                    )
+                    openModal("Culture marraichère", "", Marraichere.src)
                   }
                 >
                   Voir plus...

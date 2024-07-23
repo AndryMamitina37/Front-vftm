@@ -15,12 +15,15 @@ function Footer() {
   return (
     <footer>
       <div className="content border-t border-blue-gray-50">
-        <div className="left box">
+        <div className="left box" style={{ paddingLeft: "20px" }}>
           <div className="upper">
             <div className="topic">A propos de nous</div>
             <p>
-              CodingLab is a channel where you can learn HTML, CSS, and also
-              JavaScript along with creative CSS Animations and Effects.
+              VFTM a &eacute;t&eacute; cr&eacute;&eacute; en 2006,
+              Compos&eacute;e de 22 organisations paysannes de la R&eacute;gion
+              Matsiatra Ambony, repr&eacute;sentant plus de 3500 paysans, sur
+              les 7 districts et 58 communes. seule plateforme syndicale de la
+              R&eacute;gion Haute Matsiatra.
             </p>
           </div>
           <div className="lower">
@@ -35,7 +38,7 @@ function Footer() {
                 color="gray"
                 className="h-5 w-5"
               />
-              asvftm@gmail.com
+              assvftm@gmail.com
             </div>
           </div>
         </div>
@@ -62,9 +65,9 @@ function Footer() {
         <div className="right box">
           <div className="topic">Contactez nous</div>
           <form action="#">
-            <input type="text" placeholder="Votre adresse email" />
+            <input type="email" placeholder="Votre adresse email" required />
 
-            <textarea placeholder="Message" />
+            <textarea placeholder="Message" required />
             <input type="submit" name="" value="Envoyer" />
           </form>
         </div>

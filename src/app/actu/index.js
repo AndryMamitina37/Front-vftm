@@ -2,15 +2,48 @@
 
 import React from "react";
 import Image from "next/image";
+import ActuImage from "./img/img13.png";
+import Sary1 from "./img/sary1.jpg";
+import Sary2 from "./img/sary2.jpg";
+import Sary3 from "./img/sary3.jpg";
+import Sary5 from "./img/sary5.jpg";
 
-import { Typography, Card, CardBody } from "@material-tailwind/react";
+import { Typography, Card, CardBody, Button } from "@material-tailwind/react";
 
 export function Index() {
+  const images = [
+    { src: Sary1, alt: "image1" },
+    { src: Sary2, alt: "image2" },
+    { src: Sary3, alt: "image2" },
+    { src: Sary5, alt: "image2" },
+  ];
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
   return (
     <section className="w-full max-w-6xl mx-auto flex flex-col px-4 py-20">
       <div
-        className="relative  bg-[url('/image/vftm-actu/img18.png')] bg-cover bg-no-repeat"
-        style={{ padding: "40px 5px 5px 5px" }}
+        className="relative bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url(${ActuImage.src})`,
+          padding: "80px 5px 5px 5px",
+        }}
       >
         <Typography variant="h3" className="text-center" color="white">
           Nos Actualit&eacute;s
@@ -26,8 +59,8 @@ export function Index() {
         </Typography>
       </div>
 
-      <div className="mt-10 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <div className=" md:border-r px-3 border-blue-gray-100">
+      <div className="mt-10 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+        <div>
           <div className="!border-b  border-blue-gray-100 mb-5">
             <Card shadow={false} className="p-0">
               <CardBody className="p-0 pb-5">
@@ -103,7 +136,10 @@ export function Index() {
           <BlogCardWithImage />
         </div> */}
         <div className="md:border-l px-3 border-blue-gray-100">
-          <div className="!border-b  border-blue-gray-100 mb-6">
+          <div
+            className="!border-b  border-blue-gray-100 mb-6"
+            style={{ marginBottom: "30px" }}
+          >
             <Card shadow={false} className="p-0">
               <CardBody className="p-0 pb-5">
                 <Typography
@@ -112,48 +148,123 @@ export function Index() {
                 >
                   Biomimicry: Nature-Inspired Innovations
                 </Typography>
-                <div className="w-full mb-4 h-[149px] ">
-                  <Image
-                    width={768}
-                    height={768}
-                    src="/image/vftm/sary1.jpg"
-                    className="w-10/12 md:w-full object-cover h-full rounded-lg"
-                    alt=""
-                  />
+
+                <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+                  <Button color="white" variant="filled" onClick={prevSlide}>
+                    Prev
+                  </Button>
+                </div>
+                <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
+                  <Button color="white" variant="filled" onClick={nextSlide}>
+                    Next
+                  </Button>
                 </div>
                 <Typography className="!font-bold !text-sm text-gray-700">
                   by Mathew Glock
                 </Typography>
-              </CardBody>
-            </Card>
-          </div>
-          <div className="!border-b md:border-none border-blue-gray-100 mb-6">
-            <Card shadow={false} className="p-0">
-              <CardBody className="p-0 pb-5">
-                <Typography
-                  variant="h4"
-                  className="leading-[45px] mb-6 !text-gray-900"
-                >
-                  Bringing Back Extinct Species
-                </Typography>
-                <div className="w-full mb-4 h-[149px]">
-                  <Image
-                    width={768}
-                    height={768}
-                    src="/image/vftm/sary2.jpg"
-                    className="w-10/12 md:w-full object-cover h-full rounded-lg"
-                    alt=""
-                  />
+                <div className="mb-4 h-[149px]">
+                  {images.map((image, index) => (
+                    <div key={index}>
+                      {index === currentIndex && (
+                        <Image
+                          width={768}
+                          height={568}
+                          src={image.src}
+                          alt={image.alt}
+                          layout="responsive"
+                          className="w-10/12 md:w-full object-cover h-full rounded-lg"
+                        />
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <Typography className="!font-bold !text-sm text-gray-700">
-                  by Emma Roberts
-                </Typography>
               </CardBody>
             </Card>
           </div>
         </div>
+      </div>
+
+      <div className="mt-10 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+        <div>
+          <div className="!border-b  border-blue-gray-100 mb-5">
+            <Card shadow={false} className="p-0">
+              <CardBody className="p-0 pb-5">
+                <Typography
+                  variant="h4"
+                  className="leading-[45px] mb-4 !text-gray-900 "
+                >
+                  Exploring the Role of Epigenetics in Inherited Traits
+                </Typography>
+                <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
+                  Investigate the emerging field of epigenetics and its impact
+                  on understanding how environmental factors can influence gene
+                  expression and inheritance.
+                </Typography>
+                <div className="flex items-center gap-3">
+                  <div className="">
+                    <Image
+                      width={256}
+                      height={256}
+                      src="/image/avatar2.jpg"
+                      className="w-12 object-cover h-12 rounded-lg"
+                      alt="photo"
+                    />
+                  </div>
+                  <div>
+                    <Typography className="!font-bold !text-sm text-gray-900">
+                      Mathew Glock
+                    </Typography>
+                    <Typography className="!font-normal !text-xs text-gray-500">
+                      Author
+                    </Typography>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+          </div>
+          <div className="!border-b md:border-none border-blue-gray-100 mb-5">
+            <Card shadow={false} className="p-0">
+              <CardBody className="p-0 pb-5">
+                <Typography
+                  variant="h4"
+                  className="leading-[45px] mb-4 !text-gray-900 "
+                >
+                  How Gut Bacteria Affect Our Health and Well-being
+                </Typography>
+                <Typography className="text-normal mb-4 !text-base text-blue-gray-500 ">
+                  Dive into the latest research on the human microbiome.
+                </Typography>
+                <div className="flex items-center gap-3">
+                  <div className="">
+                    <Image
+                      width={256}
+                      height={256}
+                      src="/image/avatar1.jpg"
+                      className="w-12 object-cover h-12 rounded-lg"
+                      alt="photo"
+                    />
+                  </div>
+                  <div>
+                    <Typography className="!font-bold !text-sm text-gray-900">
+                      Mathew Glock
+                    </Typography>
+                    <Typography className="!font-normal !text-xs text-gray-500">
+                      Author
+                    </Typography>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+          </div>
+        </div>
+        {/* <div>
+          <BlogCardWithImage />
+        </div> */}
         <div className="md:border-l px-3 border-blue-gray-100">
-          <div className="!border-b  border-blue-gray-100 mb-6">
+          <div
+            className="!border-b  border-blue-gray-100 mb-6"
+            style={{ marginBottom: "30px" }}
+          >
             <Card shadow={false} className="p-0">
               <CardBody className="p-0 pb-5">
                 <Typography
@@ -162,42 +273,36 @@ export function Index() {
                 >
                   Biomimicry: Nature-Inspired Innovations
                 </Typography>
-                <div className="w-full mb-4 h-[149px] ">
-                  <Image
-                    width={768}
-                    height={768}
-                    src="/image/vftm/sary3.jpg"
-                    className="w-10/12 md:w-full object-cover h-full rounded-lg"
-                    alt=""
-                  />
+
+                <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+                  <Button color="white" variant="filled" onClick={prevSlide}>
+                    Prev
+                  </Button>
+                </div>
+                <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
+                  <Button color="white" variant="filled" onClick={nextSlide}>
+                    Next
+                  </Button>
                 </div>
                 <Typography className="!font-bold !text-sm text-gray-700">
                   by Mathew Glock
                 </Typography>
-              </CardBody>
-            </Card>
-          </div>
-          <div className="!border-b md:border-none border-blue-gray-100 mb-6">
-            <Card shadow={false} className="p-0">
-              <CardBody className="p-0 pb-5">
-                <Typography
-                  variant="h4"
-                  className="leading-[45px] mb-6 !text-gray-900"
-                >
-                  Bringing Back Extinct Species
-                </Typography>
-                <div className="w-full mb-4 h-[149px]">
-                  <Image
-                    width={768}
-                    height={768}
-                    src="/image/vftm/sary5.jpg"
-                    className="w-10/12 md:w-full object-cover h-full rounded-lg"
-                    alt=""
-                  />
+                <div className="mb-4 h-[149px]">
+                  {images.map((image, index) => (
+                    <div key={index}>
+                      {index === currentIndex && (
+                        <Image
+                          width={768}
+                          height={568}
+                          src={image.src}
+                          alt={image.alt}
+                          layout="responsive"
+                          className="w-10/12 md:w-full object-cover h-full rounded-lg"
+                        />
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <Typography className="!font-bold !text-sm text-gray-700">
-                  by Emma Roberts
-                </Typography>
               </CardBody>
             </Card>
           </div>

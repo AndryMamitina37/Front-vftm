@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "../../public/logos/logoVftm.png";
+import FaireDon from "../app/faireDon/modal";
 import {
   Navbar as MTNavbar,
   Collapse,
@@ -13,6 +15,11 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const [openModal, setOpenModal] = React.useState(false);
+
+  const closeModal = () => {
+    setOpenModal(false);
+  };
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
   const [isScrolling, setIsScrolling] = React.useState(false);
@@ -61,6 +68,7 @@ export function Navbar() {
         boxShadow: isScrolling ? "1px 2px 3px rgba(0, 0, 0, 0.103)" : "none",
       }}
     >
+      <FaireDon isOpen={openModal} isClose={() => closeModal()} />
       <div className="container mx-auto flex items-center justify-between">
         <Typography
           as="a"
@@ -75,7 +83,7 @@ export function Navbar() {
           }}
         >
           <Image
-            src="/logos/logoVftm.png"
+            src={Logo}
             alt="image"
             width={110}
             height={100}
@@ -112,11 +120,13 @@ export function Navbar() {
           </li>
         </ul>
         <div className="hidden items-center gap-2 lg:flex">
-          <Link href="#" target="_blank">
-            <Button color="green" className="hover:bg-green-700">
-              Faire un don
-            </Button>
-          </Link>
+          <Button
+            color="green"
+            className="hover:bg-green-700"
+            onClick={() => setOpenModal(true)}
+          >
+            Faire un don
+          </Button>
         </div>
         <IconButton
           variant="text"
@@ -171,12 +181,9 @@ export function Navbar() {
             className="mt-6 flex items-center gap-2"
             style={{ justifyContent: "center" }}
           >
-            <Link
-              href="https://www.material-tailwind.com/blocks"
-              target="_blank"
-            >
-              <Button color="green">Faire un don</Button>
-            </Link>
+            <Button color="green" onClick={() => setOpenModal(true)}>
+              Faire un don
+            </Button>
           </div>
         </div>
       </Collapse>

@@ -1,10 +1,14 @@
 "use client";
 
 import { IconButton, Typography } from "@material-tailwind/react";
+import HomeImage from "./img/sary13.png";
 
 function Hero() {
   return (
-    <div className="relative min-h-screen w-full bg-[url('/image/vftm/sary13.png')] bg-cover bg-no-repeat">
+    <div
+      className="relative min-h-screen w-full bg-cover bg-no-repeat"
+      style={{ backgroundImage: `url(${HomeImage.src})` }}
+    >
       <div className="absolute inset-0 h-full w-full " />
       <div className="grid min-h-screen px-8">
         <div

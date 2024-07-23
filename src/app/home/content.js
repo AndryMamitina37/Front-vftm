@@ -2,6 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
+import Img1 from "./img/sary11.jpg";
+import Img2 from "./img/img19.png";
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 
 export function Content() {
@@ -24,7 +26,7 @@ export function Content() {
         </Typography>
 
         <Typography
-          className="my-10 font-normal !text-black-500"
+          className="my-12 font-normal !text-black-500"
           style={{ display: "block" }}
         >
           <span>AG: 3 repr&eacute;sentants/Organisations </span>
@@ -43,7 +45,7 @@ export function Content() {
         <Image
           width={768}
           height={500}
-          src="/image/vftm/vftm3.jpg"
+          src={Img1.src}
           alt="post"
           className="mb-4 h-[28rem] w-full rounded-xl object-cover"
         />
@@ -87,7 +89,8 @@ export function Content() {
                 <Image
                   width={768}
                   height={768}
-                  src="/image/vftm-actu/img19.png"
+                  // src="/image/vftm-actu/img19.png"
+                  src={Img2.src}
                   className="md:w-full object-cover h-full rounded-lg"
                   alt=""
                 />
